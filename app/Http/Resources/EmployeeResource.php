@@ -4,6 +4,8 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\Address;
+use App\Models\EmployeeDesignation;
 
 class EmployeeResource extends JsonResource
 {
@@ -16,7 +18,8 @@ class EmployeeResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'employee_designation_id' => $this->employee_designation_id,
+            'employee_designation' => $this->employee_designation_id ? EmployeeDesignation::findOrFail($this->employee_designation_id)->title : "null",
+            'address' => $this->address_id ? Address::findOrFail($this->address_id)->postcode : "null",
             'name' => $this->name,
             'date_of_birth' => $this->date_of_birth,
             'phone_number' => $this->phone_number,

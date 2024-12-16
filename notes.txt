@@ -1,0 +1,19 @@
+To-do list:
+Apply try-catch blocks for error handling.
+
+Work in progress:
+- add employee address functionality
+    - 1. add address_id as foreign key to empoyee table
+    2. make crud operations for address table
+    3. assign address id to employee
+    4.
+
+- update ERD diagram
+    1. delete all middle tables for address
+
+
+Completed tasks:
+- add employee designations functionality
+
+
+Notes:

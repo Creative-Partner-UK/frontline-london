@@ -23,13 +23,14 @@ class StoreEmployeeRequest extends FormRequest
     {
         return [
             'employee_designation_id' => 'exists:employee_designations,id',
+            'address_id' => 'exists:addresses,id',
             'name' => 'required|string|max:255',
             'date_of_birth' => 'required|date|before:-18 years',
-            'phone_number' => 'required|string',
+            'phone_number' => 'required|string|max:255',
             'job_title' => 'required|in:head doorman,supervisor,team member',
-            'utr_number' => 'string',
-            'national_insurance_number' => 'string',
-            'remarks' => 'string',
+            'utr_number' => 'string|max:255',
+            'national_insurance_number' => 'string|max:255',
+            'remarks' => 'min:3|max:1000',
             'is_active' => 'boolean',
         ];
     }
